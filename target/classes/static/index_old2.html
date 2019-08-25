@@ -1,0 +1,106 @@
+<html>
+<script src="jquery-3.1.1.js"></script>
+<script src="angular.min.js"></script>
+
+<body>
+
+<div ng-app="myShoppingList" ng-controller="myCtrl">
+  <ul>
+    <li ng-repeat="x in products">{{x}}<span ng-click="removeItem($index)">×</span></li>
+  </ul>
+  <input ng-model="addMe">
+  <button ng-click="addItem()">Add</button>
+  
+  Angular Test {{4+3}}
+			Instance of {{ControllerName}} is created
+</div>
+
+
+		 		<canvas id="myCanvas1" height="620" width="680"> </canvas> 
+				
+				<canvas id="rectangle1" onclick="rect1()"> </canvas>
+				 <canvas id="rectangle2" > </canvas>
+				<canvas id="rectangle3"> </canvas>
+				<canvas id="rectangle4"> </canvas>
+				
+				<canvas id="rectMPN" onclick="q1()"></canvas>
+				 <canvas id="rectOLP" onclick="q2()"></canvas>
+				<canvas id="rectMPC" onclick="q3()"></canvas>
+				 <canvas id="rectPABA" onclick="q4()"></canvas>
+				<canvas id="rectWSS" onclick="q5()"></canvas>
+				<canvas id="rectSUPY" onclick="q6()"></canvas>
+				<canvas id="rectCSCC" onclick="q7()"></canvas>	
+				<canvas id="rectMCS" onclick="q8()"></canvas>
+				<canvas id="rect_" onclick="q9()"></canvas>
+ 		
+<script src="chassisNgController.js"></script> 
+</body>
+
+
+<script>
+/* var app = angular.module("myShoppingList", []); 
+app.controller("myCtrl", function($scope) {
+    $scope.products = ["Milk", "Bread", "Cheese"];
+    $scope.addItem = function () {
+        $scope.products.push($scope.addMe);
+    }    
+    $scope.removeItem = function (x) {
+        $scope.products.splice(x, 1);
+    }
+});
+
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+// Create gradient
+var grd = ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,150,80); */
+</script>
+
+</html> 
+
+
+<!--
+<html>
+<script src="jquery-3.1.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+		<head>
+  			<link rel="stylesheet" href="/styles/CssFile.css">    		
+		</head>
+		
+		<div ng-app="myShoppingList" ng-controller="myCtrl">
+  
+			  Angular Test {{4+3}}
+			  Instance of {{ControllerName}} is created
+		</div>
+		
+				<canvas id="myCanvas1" height="620" width="680"> </canvas> 
+				
+				<canvas id="rectangle1" onclick="rect1()"> </canvas>
+				 <canvas id="rectangle2" > </canvas>
+				<canvas id="rectangle3"> </canvas>
+				<canvas id="rectangle4"> </canvas>
+				
+				<canvas id="rectMPN" onclick="q1()"></canvas>
+				 <canvas id="rectOLP" onclick="q2()"></canvas>
+				<canvas id="rectMPC" onclick="q3()"></canvas>
+				 <canvas id="rectPABA" onclick="q4()"></canvas>
+				<canvas id="rectWSS" onclick="q5()"></canvas>
+				<canvas id="rectSUPY" onclick="q6()"></canvas>
+				<canvas id="rectCSCC" onclick="q7()"></canvas>	
+				<canvas id="rectMCS" onclick="q8()"></canvas>
+				<canvas id="rect_" onclick="q9()"></canvas>
+ 		
+		<div ng-app="myShoppingList" ng-controller="myCtrl">
+			Angular Test {{4+3}}
+			Instance of {{ControllerName}} is created
+		</div>
+		
+		<script src="chassisNgController.js"></script>
+	</body>
+</html> -->

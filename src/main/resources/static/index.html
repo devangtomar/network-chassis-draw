@@ -1,0 +1,68 @@
+<html>
+<script src="jquery-3.1.1.js"></script>
+
+
+    	<script src="Tooltip.js" type="text/javascript"></script>
+
+<script src="angular.min.js"></script>
+<!-- <script src="angular-route.js"></script> -->
+<link rel="stylesheet" href="/styles/CssFile.css">
+<body>
+	
+	<div ng-app="chassisView" ng-controller="chassisViewController"
+		id="chassisViewCanvasDiv" class="tab-pane fade col-md-12 col-sm-12">
+		<div class="row">
+			<div class="col-md-1 col-sm-1 arrowContainer">
+				<input type="image" ng-click="selectRackHandler(1)"
+					src="Left Squared Filled-50.png" a
+					alt="Left View" id="leftArrowChassisView">
+				<!-- 					 	<img alt="Left View" class="img-responsive " src="images/Direction/ng-icons/Left Squared Filled-50.png" style="margin-top:390px;margin-left:13px"></p>
+					 	</img>
+ -->
+			</div>
+			<div class="col-md-8 col-sm-8 col-lg-8" id="chassisCanvasId">
+
+				<canvas data-tooltip ng-mousedown="canvasOnMouseHover($event)" ng-mouseout="canvasOnMouseOut($event)" id="chassisFrontCanvas" ng-model="ngChassisFrontCanvas" style="border: 2px solid black;">
+				<!-- This is important  -->
+				</canvas>
+					 	
+			</div>
+			<div  class="col-md-1 col-sm-1 arrowContainer">
+				<input type="image" ng-click="selectRackHandler(2)"
+					src="Right Squared Filled-50.png"
+					alt="Right View" id="rightArrowChassisView">
+				<!-- <img alt="Right View" class="img-responsive" src="images/Direction/ng-icons/Right Squared Filled-50.png" style="margin-top:390px;margin-left:40px"></p>
+					 	</img>
+					 	 -->
+			</div>
+			<!-- <label ng-show="selectedNetworkView==3" >Select NE</label> -->
+			<div class="col-md-2 col-sm-2">
+				<form class="form-inline" id="nodeIdInputChassisViewForm">
+					<div class="form-group" style="margin-top: 20px;">
+						<label for="selectNodeIdforChassisView">Select Node</label> <select
+							class="form-control" ng-model="selectedNode"
+							ng-options="item for item in names" ng-change="neChangeHandler()">
+						</select>
+					</div>
+				</form>
+			</div>
+			
+			
+			
+			
+			
+		</div>
+		
+	</div>
+	
+    <script src="angularJs/chassisViewNgInit.js"></script> 
+    <script src="angularJs/chassisViewNg.js"></script>
+
+<script>
+ 
+</script>
+
+
+
+</body>
+</html>

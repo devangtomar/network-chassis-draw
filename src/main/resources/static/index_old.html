@@ -1,0 +1,228 @@
+<html>
+<body>
+<head>
+<link rel="stylesheet" href="/styles/CssFile.css">
+</head>
+<section>
+	
+		<canvas id="myCanvas1" > </canvas>
+		<canvas id="rectangle2"> </canvas>
+	
+	<script src="jquery-3.1.1.js"></script>
+	
+	<script type="text/javascript">
+				/**
+				*@ initialication of variables
+				*/
+				var i;			
+				var canvasmyCanvas1;
+			    var ctxmyCanvas1 ;
+			    
+			 
+			    var canvas_rectangle2;
+		
+			    /**
+			    *@dividing rectangle in to 14 columns
+			    **/
+				var column=14;
+			
+				var cards=[];
+				
+				/**Global Card Properties*/
+				var card_Color =["yellow","blue","green","pink","#87CEEB","#6B8E23","#808080","#32CD32","'#8B4513"];
+							
+				
+				function init()
+				{
+					console.log("init");
+					canvasmyCanvas1 = document.getElementById('myCanvas1');
+				    ctxmyCanvas1 = canvasmyCanvas1.getContext('2d'); 
+				    
+					
+				    canvas_rectangle2 = document.getElementById('rectangle2');
+				    context_rectangle2 = canvas_rectangle2.getContext('2d');
+				    
+				
+				    drawAll();
+				}
+				function drawAll()
+				{
+					console.log("draw all");
+					drawBack();
+					drawRect();					
+					console.log("draw all done");
+				}
+				function drawBack()
+				{
+					console.log("draw back");
+					 ctxmyCanvas1.fillStyle ='#FAF7F8';
+					 ctxmyCanvas1.beginPath();
+					 ctxmyCanvas1.rect(0,0,679,618);
+					 ctxmyCanvas1.closePath();
+					 ctxmyCanvas1.shadowBlur=5;
+					 ctxmyCanvas1.shadowColor="black";
+					 ctxmyCanvas1.fill();
+					 ctxmyCanvas1.lineWidth=2;
+					 ctxmyCanvas1.strokeStyle = 'black';
+					 ctxmyCanvas1.stroke();
+					 console.log("draw back done");
+				}
+	
+				function drawRect()
+				{
+				    console.log("draw rect");				    
+			    	subRectangle2();				    
+			    	console.log("draw rect done");
+			    }
+				
+				
+				 function draw (context, x, y,width,height,card_Color/*fillStyle*/, fonttype, filltext1,filltext2,filltext3,filltext4)
+					{
+						console.log(" final draw " + x +", "+ y +", "+ width +", "+height ); 
+						 context.beginPath();					   
+					    context.rect(x,y,width,height);
+					    context.fillStyle = card_Color/*fillStyle*/;
+					    context.fill();
+					    context.lineWidth =1;
+					    context.strokeStyle = 'black';
+					    context.stroke();
+					    
+					/*     context.fillStyle = 'white';
+					    context.textAlign = 'center';
+					    context.font = fonttype;
+					    context.fillText(filltext1, x+5, y+20);
+					    context.fillText(filltext2, x+5, y+40);
+					    context.fillText(filltext3, x+5, y+60); 
+					    context.fillText(filltext4, x+5, y+80); */
+					    console.log("Completed Draw");
+					}
+				
+				
+
+				var  Rectangle= function(x, y,width,height) 
+				 {
+					console.log(" push rect start");
+					console.log("x=" + x + "y=" + y + "width=" + width + "height=" + height)
+					this.left = x;
+				    this.top = y;
+				    this.right = x + width;
+				    this.bottom = y + height;
+				    console.log("this.left =" + this.left  + ",  this.right= " +this.right  + ", this.top =" + this.top + ", this.bottom =" + this.bottom)			    
+				    console.log(" push rect  done");
+				 };
+				
+				 function drawRectangle(context, x, y,width,height,card_Color/*fillStyle*/, fonttype, filltext1,filltext2,filltext3,filltext4)
+				{
+						console.log("draw rectangle");
+				    	draw(context, x, y,width,height, card_Color/*fillStyle*/, fonttype ,filltext1,filltext2,filltext3,filltext4);
+				  		console.log("x= " + x +"y="+y);
+				    	var rectangle = new Rectangle(x, y,width, height);///15,110);
+				  		/* x=x+20; */
+				  		console.log("Rect Obj :- "+"rectangle.left" + rectangle.left + "rectangle.top" + rectangle.top + "rectangle.right" + rectangle.right + "rectangle.bottom" +rectangle.bottom  )
+				   	    cards.push(rectangle); 
+				  		console.log(cards)
+				 
+				}
+				
+				 function subRectangle2()
+				 {
+					 	console.log("draw subrectangle2");					 	
+					 	context_rectangle2.fillStyle='#B0C4DE';
+				    	context_rectangle2.beginPath();
+				    	context_rectangle2.rect(0,0,660,150);
+				    	context_rectangle2.closePath();
+				    	//context_rectangle2.shadowBlur=20;
+				    	context_rectangle2.shadowColor="black";
+				    	context_rectangle2.fill();
+				    	//context_rectangle2.lineWidth=2;
+				    	context_rectangle2.strokeStyle='black';
+				    	context_rectangle2.stroke(); 				    	
+				    	console.log("draw subrectangle2 done");
+				    	
+				    	var Count=0;
+				    	var j=0;
+				    	  
+				    	var rect = canvas_rectangle2.getBoundingClientRect();	
+				    	console.log("subrect2 : left : "+ rect.left  +" , and top : "+ rect.top +", right :- "+rect.right + ",  width :-   "+rect.width);
+				    	
+				    	for( i=0;i<2;i++)
+				    	{				    	
+				    		console.log("i :- "+i + " And Count :- "+ Count);
+				    		console.log("Width :- "+ rect.width);
+
+					    	console.log("Width/14 :- "+rect.width/14);
+					    	
+					    	console.log("Width/14 + i :- "+(rect.width/14)+Count);
+
+					    	console.log("card_Color[j] :- "+card_Color[j] + " j :-" + j);
+					    	
+					    	
+				    		drawRectangle(context_rectangle2, Count,30,(rect.width/14),110, card_Color[j],"bold 15px Arial", "","","","");
+				    		
+				    		Count=Count+50;
+				    		j=j+1;
+				    		console.log("J :- "+ j);
+				    	    if(j >= 9){
+				    	    	
+				    	    	j = 0;// REset to Zero
+				    	    }
+				   
+				    		console.log("Final J :- "+ j);
+				    					    		
+				    		//drawRectangle(context_rectangle2, 10, 10, "bold 32px Arial", "1", cards);
+				    	}	
+				    	
+				    	
+				    	
+				 }
+				
+			
+		
+				$('#rectangle2').click(function (e)
+				{
+						//alert("click function");
+						 console.log("e.pageX : " + e.pageX +"  this.offsetLeft  "+ this.offsetLeft +", e.pageY : " + e.pageY +"  this.offsetTop  "+ this.offsetTop);
+						 
+				   		 var clickedX = e.pageX - this.offsetLeft /**/;				   		 
+				   	 	var clickedY = e.pageY ;/*- this.offsetTop;*/
+				   	 	
+				   	    console.log("clickedX: " + clickedX +" and clickedY : "+ clickedY) ;
+				   	 	
+				   	 	/* 				   	 	
+			   	 		var rect2Bound  = canvas_rectangle2.getBoundingClientRect();
+				   		console.log("e.clientX : " + e.clientX +",   this.offsetLeft  "+ this.offsetLeft + ",  and  rect2Bound.left  :- " +  rect2Bound.left +",   rect2Bound.top :- "+ 
+				   			 rect2Bound.top);
+				   		
+				   	 	var clickedClientX = e.clientX - this.offsetLeft/*  - rect2Bound.left ;
+				   		console.log("clickedClientX: " + clickedClientX);				   		
+				   		var clickedClientY = e.clientY - this.offsetTop - rect2Bound.top;
+				   		console.log("clickedClientY:  " + clickedClientY);
+				   	 	console.log("e.pageY : "  + e.pageY + "   and  offset top := " + this.offsetTop);
+				   	 	console.log("clickedY : "  + clickedY) 
+				   	 	console.log( " e.clientX : " +e.clientX +" and  e.clientY : "+ e.clientY)
+				   	 	console.log( " e.pageX : " + e.pageX +" and  e.pageY : "+ e.pageY)				        
+				    	console.log("clickedX : " + e.clickedX +", clickedY : " + e.clickedY)
+				    	*/
+				    	
+				    	
+				    	console.log("card length : " + cards.length)
+				    	
+				   	 for (var i = 0; i < cards.length; i++) 
+				    	{				  
+				     	  console.log(cards[i]+ "cards[i].left : " + cards[i].left + ",  cards[i].right:  " + cards[i].right + ",  cards[i].top: " + cards[i].top + ",  cards[i].bottom:  " +cards[i].bottom )
+				   	 	 
+				     	  if (clickedX < cards[i].right && clickedX > cards[i].left /*  && clickedY > cards[i].top && clickedY < cards[i].bottom */)
+				      	  {
+				        	//console.log("clickedX" + clickedX +"clickedY" + clickedY)
+				        	//console.log(cards[i]+ "cards[i].right" + cards[i].right + "cards[i].left " + cards[i].left + "cards[i].top" + cards[i].top + "cards[i].bottom " +cards[i].bottom )				           
+				        	 alert('clicked number' + (i + 1));
+				   		   } 
+					 	}
+				});
+				
+				init();
+			</script>
+
+</section>
+</body>
+</html>

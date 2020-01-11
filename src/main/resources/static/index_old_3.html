@@ -1,0 +1,81 @@
+<html>
+<script src="jquery-3.1.1.js"></script>
+<script src="angular.min.js"></script>
+<!-- <script src="angular-route.js"></script> -->
+<link rel="stylesheet" href="/styles/CssFile.css">
+<body>
+
+<script>
+ var app = angular.module("chassisView", []);/// ['ngRoute']); 
+ app.controller('chassisViewController', function($scope, $http) {	 
+	 
+	 /**Ajax $http call to DB for actual card related data*/
+	 //Db data
+	 /*  $http.get('chassisViewDbData').
+        then(function(response) {
+            $scope.chassisViewDbData = {	//response.data;
+            		"ChassisViewDbData":
+            			[{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":40},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":39},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":41},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":38},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":42},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":37},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":43},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":36},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":44},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":35},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":45},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":34},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":46},
+            			{"Rack":1,"SubRack":3,"Card":1,"CardType":1,"Direction":1,"WaveLength":33}]
+	        };
+
+				
+        });*/
+        
+        $scope.dwdmDetails = {	
+        		
+        };
+
+	
+	 //nondb data
+	 $scope.chassisViewNonDbData= {
+			 
+			 "chassis":{"specs":{"gneId":"2","childId":"1","maxRackPerChassis":"1","rackList":[{"gneId":"2","childId":"1","rackId":"1","maxSubRackPerRack":"3","subRackList":[{"gneId":"2","childId":"1","rackId":"1","subRackId":"1","maxSlotPerSubRack":"14","cardList":[]},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","maxSlotPerSubRack":"14","cardList":[{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"2","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"8","typeName":"WSS 1*2 Card","subType":"0","subTypeName":"NA","id":"128582","primaryStatus":"Jack Out","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"6","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"12","typeName":"OSC","subType":"0","subTypeName":"NA","id":"128585","primaryStatus":"Jack Out","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"9","maxPortPerCard":"6","portList":[{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"9","cardType":"1","cardSubType":"3","portId":1,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"9","cardType":"1","cardSubType":"3","portId":2,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"9","cardType":"1","cardSubType":"3","portId":3,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"9","cardType":"1","cardSubType":"3","portId":4,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"9","cardType":"1","cardSubType":"3","portId":5,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"9","cardType":"1","cardSubType":"3","portId":41,"portType":0,"portTypeName":"line"}],"maxSlotPerCard":"1","type":"1","typeName":"MPN","subType":"3","subTypeName":"40G MUXPONDER by CORTINA","id":"128586","primaryStatus":"Ready","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"11","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"8","typeName":"WSS 1*2 Card","subType":"0","subTypeName":"NA","id":"128587","primaryStatus":"Ready","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"13","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"7","typeName":"OCM Card","subType":"0","subTypeName":"NA","id":"128588","primaryStatus":"Ready","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"14","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"4","typeName":"Amplifier","subType":"0","subTypeName":"NA","id":"128589","primaryStatus":"Ready","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"1","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"4","typeName":"Amplifier","subType":"0","subTypeName":"NA","id":"136138","primaryStatus":"Ready","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"5","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"1","typeName":"MPN","subType":"5","subTypeName":"CGX","id":"136712","primaryStatus":"Jack Out","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"3","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"7","typeName":"OCM Card","subType":"0","subTypeName":"NA","id":"136735","primaryStatus":"Absent","appStatus":"PROVISIONED_NOT_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","maxPortPerCard":"11","portList":[{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","cardType":"1","cardSubType":"1","portId":1,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","cardType":"1","cardSubType":"1","portId":2,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","cardType":"1","cardSubType":"1","portId":3,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","cardType":"1","cardSubType":"1","portId":4,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","cardType":"1","cardSubType":"1","portId":5,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","cardType":"1","cardSubType":"1","portId":6,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","cardType":"1","cardSubType":"1","portId":7,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","cardType":"1","cardSubType":"1","portId":8,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","cardType":"1","cardSubType":"1","portId":9,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","cardType":"1","cardSubType":"1","portId":10,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"4","cardType":"1","cardSubType":"1","portId":101,"portType":0,"portTypeName":"line"}],"maxSlotPerCard":"1","type":"1","typeName":"MPN","subType":"1","subTypeName":"100G MUXPONDER by PMC Sierra","id":"138027","primaryStatus":"Ready","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"2","slotId":"7","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"3","typeName":"CSCC","subType":"0","subTypeName":"NA","id":"138870","primaryStatus":"Provisioned","appStatus":"PROVISIONED_READY","secondaryStatus":"1","secondaryStatusName":"Active"}]},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","maxSlotPerSubRack":"14","cardList":[{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"1","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"1","typeName":"MPN","subType":"5","subTypeName":"CGX","id":"128592","primaryStatus":"Jack Out","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"3","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"1","typeName":"MPN","subType":"5","subTypeName":"CGX","id":"128593","primaryStatus":"Jack Out","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","maxPortPerCard":"11","portList":[{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","cardType":"1","cardSubType":"1","portId":1,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","cardType":"1","cardSubType":"1","portId":2,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","cardType":"1","cardSubType":"1","portId":3,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","cardType":"1","cardSubType":"1","portId":4,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","cardType":"1","cardSubType":"1","portId":5,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","cardType":"1","cardSubType":"1","portId":6,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","cardType":"1","cardSubType":"1","portId":7,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","cardType":"1","cardSubType":"1","portId":8,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","cardType":"1","cardSubType":"1","portId":9,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","cardType":"1","cardSubType":"1","portId":10,"portType":1,"portTypeName":"client"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"10","cardType":"1","cardSubType":"1","portId":101,"portType":0,"portTypeName":"line"}],"maxSlotPerCard":"1","type":"1","typeName":"MPN","subType":"1","subTypeName":"100G MUXPONDER by PMC Sierra","id":"136898","primaryStatus":"Jack Out","appStatus":"PROVISIONED_NOT_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"7","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"2","typeName":"TPC","subType":"0","subTypeName":"NA","id":"136939","primaryStatus":"Jack Out","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"4","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"6","typeName":"Protection Card","subType":"0","subTypeName":"NA","id":"138867","primaryStatus":"Jack Out","appStatus":"UNPROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"11","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"2","type":"6","typeName":"Protection  Card","subType":"0","subTypeName":"NA","id":"138869","primaryStatus":"Ready","appStatus":"UNPROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"},{"gneId":"2","childId":"1","rackId":"1","subRackId":"3","slotId":"8","maxPortPerCard":"0","portList":[],"maxSlotPerCard":"1","type":"3","typeName":"CSCC","subType":"0","subTypeName":"NA","id":"138871","primaryStatus":"NotDetected","appStatus":"PROVISIONED_READY","secondaryStatus":"","secondaryStatusName":"NA"}]}]}]}}				
+	 };
+	 $scope.names = ["Emil", "Tobias", "Linus"];
+	 		
+	/**intialisation with db and non-db data*/
+	//init($scope);	 	
+	 
+	 $scope.neChangeHandler=function(){
+		 console.log("Item changed to "+ $scope.selectedName)
+		 /**carry out the ajax call for the response*/
+	 }
+});  
+ 
+ 
+</script>	
+	
+		
+		
+	   <div ng-app="chassisView" ng-controller="chassisViewController">
+<!-- 	   		<label ng-show="selectedNetworkView==3">Select NE</label> -->
+			Select NE
+			<select ng-model="selectedName" ng-options="item for item in names" ng-change="neChangeHandler()" margin-top: "357px"></select>
+			<canvas id="chassisFrontCanvas" ng-model="ngChassisFrontCanvas" height="800" width="680"> </canvas>	
+			
+       			
+	   </div>				
+
+<script src="chassisNgController.js"></script> 
+
+<script>
+ 
+</script>
+
+
+
+</body>
+</html>

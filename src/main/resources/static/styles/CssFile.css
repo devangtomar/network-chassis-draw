@@ -1,0 +1,134 @@
+ #chassisFrontCanvas			
+ {
+   	border:2px solid;
+   	/* height:620;
+   	width:680; */
+   	 z-index: 1;
+ }
+  #rectangle1
+ {
+ 	z-index: 2;
+ 	position:absolute;
+ 	height:150;
+   	width:660;
+   	 left:20px;
+    top:20px;
+ 	
+ } 
+ #rectangle2
+ {
+ 	z-index: 2;
+ 	position:absolute;
+ 	height:150;
+   	width:660;
+   	left:20px;
+    top:180px;
+ 	
+ }
+ #rectangle3
+ {
+ 	z-index: 2;
+ 	position:absolute;
+ 	height:150;
+   	width:660;
+   	 left:20px;
+    top:340px;
+ 	
+ }
+ #rectangle4
+ {
+ 	z-index: 2;
+ 	position:absolute;
+ 	height:100;
+   	width:660;
+    left:20px;
+    top:520px;
+ 	
+ }
+ #rectMPN
+ {
+ 	z-index: 3;
+ 	position:absolute;
+ 	width:40 ;
+ 	height:100;
+ 	left:25px;
+ 	top:65px;
+ 	font-style: italic;
+ }
+ #rectOLP
+ {
+ 	z-index: 3;
+ 	width:40 ;
+ 	position:absolute;
+ 	height:100  ;
+ 	font-family: verdana;
+    
+ 	font-size: 200%;
+ 	left:65px;
+ 	top:65px;
+ }
+ #rectMPC
+ {
+ 	z-index: 3;
+ 	width:40 ;
+ 	height: 100  ;
+ 	position:absolute;
+ 	left:105px;
+ 	top:65px;
+ 	
+ }
+ #rectPABA
+ {
+ 	z-index: 3;
+ 	width:40 ;
+ 	height: 100  ;
+ 	position:absolute;
+ 	left:145px;
+ 	top:65px;
+ }
+ #rectWSS
+ {
+ 	z-index: 3;
+ 	width:40 ;
+ 	height:100 ;
+ 	position:absolute;
+ 	left:185px;
+ 	top:65px;
+ }
+#rectSUPY
+ {
+ 	z-index: 3;
+ 	width:40 ;
+ 	height: 100  ;
+ 	position:absolute;
+ 	left:225px;
+ 	top:65px;
+ }
+ #rectCSCC
+ {
+ 	z-index: 3;
+ 	width:40 ;
+ 	height:100 ;
+ 	position:absolute;
+ 	left:265px;
+ 	top:65px;
+ }
+ #rectMCS
+ {
+ 	z-index: 3;
+ 	width: 40;
+ 	height:100;
+ 	position:absolute;
+ 	left:305px;
+ 	top:65px;
+ }
+  #rect_
+ {
+ 	z-index: 3;
+ 	width: 40;
+ 	height:100;
+ 	position:absolute;
+ 	left:345px;
+ 	top:65px;
+ }
+ 

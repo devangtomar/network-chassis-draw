@@ -22,6 +22,6 @@ Once you have the application running, you can access it by opening a web browse
 
 The application provides a drag-and-drop interface for creating networks and adding components. You can easily connect components by dragging a cable between them.
 
-##Contributing
+## Contributing
 
 If you'd like to contribute to Spring Boot Network Chasis, you can do so by forking the GitHub repository and submitting a pull request. We welcome contributions of all kinds, from bug fixes to new features.
